@@ -41,11 +41,15 @@ bot.command(:servers, help_available: false) do |event, arg|
 
   if arg == "count"
     event << "I'm currently on #{count} server#{s}."
-  elsif arg == "list"
-    event << bot.servers.values.map(&:name).join(', ')
-  else
-    event << "Mreep! Did you mean `#{event.bot.prefix}servers count`?"
+    return
   end
+
+  if arg == "list"
+    event << bot.servers.values.map(&:name).join(', ')
+    return
+  end
+
+  event << "Mreep! Did you mean `#{event.bot.prefix}servers count`?"
 end  
 
 bot.command(:ping, help_available: false) do |event|
