@@ -27,7 +27,7 @@ nil
 
 end  
 
-bot.command(:servers, help_available: false) do |event, arg1|
+bot.command(:servers, help_available: false) do |event, arg|
   count = event.bot.servers.length
   
   if count == 1
@@ -36,9 +36,9 @@ bot.command(:servers, help_available: false) do |event, arg1|
     s = "s"
   end 
 
-  if arg1 == "count"
+  if arg == "count"
     event << "I'm currently on #{count} server#{s}."
-  elsif arg1 == "list" 
+  elsif arg == "list"
     event << bot.servers.values.map(&:name)
   else
     event << "Mreep! Did you mean `;servers count`?"
