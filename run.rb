@@ -28,10 +28,7 @@ nil
 end  
 
 bot.command(:servers, help_available: false) do |event, arg1|
-  count = 0
-  for a in bot.servers.values
-    count = count + 1
-  end
+  count = event.bot.servers.length
   
   if count == 1
     s = ""
