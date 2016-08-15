@@ -1,3 +1,6 @@
+# Ignore platform-specific DLL files
+*.dll
+
 *.gem
 *.rbc
 /.config
