@@ -5,7 +5,7 @@ bot = Discordrb::Commands::CommandBot.new token: 'token', application_id: [app_i
 
 bot.command(:KhioChirp) do |event, arg|
 
-  if event.author.voice_channel == nil
+  if event.author.voice_channel.nil?
     event << "Mreep! You need to be in a voice channel!!"
     break
   end
