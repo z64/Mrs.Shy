@@ -68,7 +68,7 @@ bot.command(:setgame) do |event, *game|
     w = ""
   end
 
-  if g == "" or g == " " or g == nil
+  if game.nil?
     event.bot.game = nil
     event << "Successfuly unset the game."
     break
