@@ -7,24 +7,27 @@ bot.command(:KhioChirp) do |event, arg|
 
   if event.author.voice_channel.nil?
     event << "Mreep! You need to be in a voice channel!!"
-    break
+    return
   end
 
   if arg == "help"
     event << "Need help? This is what you can do. : `<KhioChirp [chill/VNR]`"
-  elsif arg == "vnr" or arg == "VNR"
-    bot.voice_connect(event.author.voice_channel)
-    event.voice.play_file('KhioChirping.mp3')
-    event.voice.stop_playing
-    event.voice.destroy
-  else
-    bot.voice_connect(event.author.voice_channel)
-    event.voice.play_file('KhioChirping.mp3')
-    event.voice.stop_playing
-    event.voice.destroy
+    return
   end
-nil
 
+  unless arg.casecmp('vnr').zero?
+    bot.voice_connect(event.author.voice_channel)
+    event.voice.play_file('KhioChirping.mp3')
+    event.voice.stop_playing
+    event.voice.destroy
+    return
+  end
+
+  bot.voice_connect(event.author.voice_channel)
+  event.voice.play_file('KhioChirping.mp3')
+  event.voice.stop_playing
+  event.voice.destroy
+  nil
 end  
 
 bot.command(:servers, help_available: false) do |event, arg|
