@@ -65,8 +65,6 @@ end
 bot.command(:setgame) do |event, *game|
   g = "#{game.join(' ')}"
  
-  event.bot.game = g
-  
   if g == "Mako Mankanshoku" or g == "Mako"
     e = ":cat:"
     w = "with "
@@ -81,6 +79,7 @@ bot.command(:setgame) do |event, *game|
     return
   end 
 
+  event.bot.game = g
   event << "#{e}Okay, I'm now playing #{w}**#{g}**!"
 end
 
