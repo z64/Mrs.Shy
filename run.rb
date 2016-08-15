@@ -36,10 +36,8 @@ bot.command(:servers, help_available: false) do |event, arg1|
     s = "s"
   end 
 
-  count = count.to_s
-
   if arg1 == "count"
-    event << "I'm currently on " + count + " server" + s + "."
+    event << "I'm currently on #{count} server#{s}."
   elsif arg1 == "list" 
     event << bot.servers.values.map(&:name)
   else
