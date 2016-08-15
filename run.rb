@@ -41,7 +41,7 @@ bot.command(:servers, help_available: false) do |event, arg|
   elsif arg == "list"
     event << bot.servers.values.map(&:name)
   else
-    event << "Mreep! Did you mean `;servers count`?"
+    event << "Mreep! Did you mean `#{event.bot.prefix}servers count`?"
   end
 end  
 
