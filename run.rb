@@ -74,7 +74,7 @@ bot.command(:setgame) do |event, *game|
     break
   end 
 
-  event << e + " Okay, I'm now playing "+ w +"**" + g + "**!"
+  event << "#{e}Okay, I'm now playing #{w}**#{g}**!"
 end
 
 bot.run
