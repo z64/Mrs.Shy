@@ -52,7 +52,7 @@ bot.command(:ping, help_available: false) do |event|
 end  
 
 bot.command(:invite) do |event|
-  event << "You wanna invite me to other servers? Okay, there :"
+  event << "You wanna invite me to other servers? Okay, there: #{event.bot.invite_url}"
 end
 
 bot.command(:setgame) do |event, *game|
